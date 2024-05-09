@@ -14,3 +14,16 @@ A repository to hold various shared configurations.
 1. [Init Stow]
 1. [Install omz]
 1. [Install neovim]
+
+## Todo
+- Neovim plugins
+  - Treesitter
+  - FuzzyFinder
+  - Undo
+  - Homescreen
+  - Lualine
+  - Autopairs
+  - Comments
+  - Trouble
+  - GitFugitive
+  - Formatting/Linting?
