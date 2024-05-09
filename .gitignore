@@ -1,1 +1,7 @@
+# ohmyzsh
+omz_custom/local/*
+
+# neovim
 **/lazy-lock.json
+
+!**/.gitkeep
