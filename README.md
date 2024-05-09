@@ -4,6 +4,7 @@ A repository to hold various shared configurations.
 
 ### Prerequisites
 - Git
+- npm
 - Homebrew
 - GNU Stow
 - An Installed Nerd Font
@@ -12,3 +13,4 @@ A repository to hold various shared configurations.
 1. [Clone this repo]
 1. [Init Stow]
 1. [Install omz]
+1. [Install neovim]

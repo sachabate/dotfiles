@@ -15,6 +15,18 @@ return {
             renderer = {
                 indent_markers = {
                     enable = true,
+                },
+                icons = {
+                    glyphs = {
+                        git = {
+                            unstaged = "",
+                            staged = "",
+                            unmerged = "󰾞",
+                            renamed = "",
+                            untracked = "",
+                            deleted = ""
+                        }
+                    }
                 }
             },
             actions = {
@@ -31,10 +43,13 @@ return {
 
         local keymap = vim.keymap
 
+        keymap.set("n", "<C-t>", "<cmd>NvimTreeFindFile!<CR>", {
+            desc = "Open file tree"
+        })
         keymap.set("n", "<C-b>", "<cmd>NvimTreeToggle<CR>", {
             desc = "Toggle file tree"
         })
-        keymap.set("n", "<A-b>", "<cmd>NvimTreeFindFileToggle<CR>", {
+        keymap.set("n", "<A-b>", "<cmd>NvimTreeFindFileToggle!<CR>", {
             desc = "Toggle file tree on current file"
         })
     end
