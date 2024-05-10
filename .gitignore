@@ -1,5 +1,5 @@
 # ohmyzsh
-omz_custom/local/*
+./omz_custom/alias_local.zsh
 
 # neovim
 **/lazy-lock.json
