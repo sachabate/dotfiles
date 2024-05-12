@@ -1,2 +1,5 @@
 require("sacha.core")
-require("sacha.lazy")
+
+if not vim.g.vscode then
+    require("sacha.lazy")
+end

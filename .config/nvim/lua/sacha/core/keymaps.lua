@@ -1,6 +1,7 @@
 local keymap = vim.keymap
 
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open directory" })
 
@@ -14,10 +15,17 @@ keymap.set({"i", "n"}, "<A-j>", "<Down>", { desc = "Cursor down" })
 keymap.set({"i", "n"}, "<A-k>", "<Up>", { desc = "Cursor up" })
 keymap.set({"i", "n"}, "<A-l>", "<Right>", { desc = "Cursor right" })
 
-keymap.set({"i", "n"}, "<C-h>", "<Esc><C-W>h", { desc = "Navigate pane left" })
-keymap.set({"i", "n"}, "<C-j>", "<Esc><C-W>j", { desc = "Navigate pane down" })
-keymap.set({"i", "n"}, "<C-k>", "<Esc><C-W>k", { desc = "Navigate pane up" })
-keymap.set({"i", "n"}, "<C-l>", "<Esc><C-W>l", { desc = "Navigate pane right" })
+if vim.g.vscode then
+    keymap.set({"i", "n"}, "<C-h>", "<Cmd>lua require('vscode-neovim').call('workbench.action.navigateLeft')<CR>", { desc = "Navigate pane left" })
+    keymap.set({"i", "n"}, "<C-j>", "<Cmd>lua require('vscode-neovim').call('workbench.action.navigateDown')<CR>", { desc = "Navigate pane down" })
+    keymap.set({"i", "n"}, "<C-k>", "<Cmd>lua require('vscode-neovim').call('workbench.action.navigateUp')<CR>", { desc = "Navigate pane up" })
+    keymap.set({"i", "n"}, "<C-l>", "<Cmd>lua require('vscode-neovim').call('workbench.action.navigateRight')<CR>", { desc = "Navigate pane right" })
+else
+    keymap.set({"i", "n"}, "<C-h>", "<Esc><C-W>h", { desc = "Navigate pane left" })
+    keymap.set({"i", "n"}, "<C-j>", "<Esc><C-W>j", { desc = "Navigate pane down" })
+    keymap.set({"i", "n"}, "<C-k>", "<Esc><C-W>k", { desc = "Navigate pane up" })
+    keymap.set({"i", "n"}, "<C-l>", "<Esc><C-W>l", { desc = "Navigate pane right" })
+end
 
 keymap.set("n", "<leader>ln", function ()
     vim.opt.rnu = not(vim.opt.rnu:get())
