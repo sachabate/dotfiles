@@ -4,7 +4,7 @@ Do you use neovim every day, but only touch the config once every six months and
 
 A personal repository to hold various shared configurations.
 
-Also a perpetual WIP ¯\_(ツ)_/¯
+Also a perpetual WIP ¯\\_(ツ)_/¯
 
 ### Prerequisites
 - Git
