@@ -27,8 +27,21 @@ else
     keymap.set({"i", "n"}, "<C-l>", "<Esc><C-W>l", { desc = "Navigate pane right" })
 end
 
+local function toggle_rnu_vsc()
+    local vscode = require("vscode-neovim")
+    if vscode.get_config("editor.lineNumbers") == "on" then
+        vscode.update_config("editor.lineNumbers", "relative", "global")
+    else
+        vscode.update_config("editor.lineNumbers", "on", "global")
+    end
+end
+
 keymap.set("n", "<leader>ln", function ()
-    vim.opt.rnu = not(vim.opt.rnu:get())
+    if vim.g.vscode then
+        toggle_rnu_vsc()
+    else
+        vim.opt.rnu = not(vim.opt.rnu:get())
+    end
 end, { desc = "Toggle relative line numbering" })
 
 local function toggle_cc()
